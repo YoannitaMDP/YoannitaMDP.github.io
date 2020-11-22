@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detail Football Team</title>
+    <meta name="description" content="Football PWA - Submission 2"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet" />
+    <meta name="theme-color" content="#00897B"/>
+  </head>
+  <body>
+
+      <!-- Navigasi -->
+  <nav class="teal lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="a-site-title center brand-logo">YNN</a>
+
+      <!-- <a href="#" data-target="nav-mobile" class="sidenav-trigger">&#9776;</a> 
+    ganti jadi tombol back : -->
+      <a href="javascrit:void(0)" onclick="javascript:window.history.back(-1);return false;" data-target="nav-mobile">
+        <i class="material-icons">arrow_back</i>
+      </a>
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul id="nav-mobile" class="sidenav"></ul>
+    </div>
+  </nav>
+  <!-- Akhir Navigasi -->
+
+    <div class="container" id="body-content">
+      <div class="row a-mt-3">
+          <div class="col s12 m12">
+              <div class="card">
+                  <div class="card-content teal lighten-1">
+                      <div class="center-align">
+                          <h3 class="a-font-bold yellow-text" id="detail_teamName"></h3>
+                      </div>
+                  </div>
+
+<!-- tampilkan dulu loading circle bar :  -->
+                    <div class="center-align" id="detail_preloader">
+                        <div class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-teal">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="collapsible expandable">
+                        <li> <!-- <li class="active"> -->
+                            <div class="collapsible-header">
+                                <i class="material-icons">spa</i>LOGO</div>
+                                 <!-- https://materializecss.com/icons.html -->
+                            <div class="collapsible-body" id="logo_club">
+                            <div class="card-tabs">
+                                <div class="card-content ">
+
+                                        <div class="row">
+                                            <img id="detail_teamLogo" alt="image team" width="200" height="200" vspace="20">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li> <!-- <li class="active"> -->
+                            <div class="collapsible-header">
+                                <i class="material-icons">info</i>INFORMASI CLUB</div>
+                            <div class="collapsible-body" id="profil_club">
+                                <div class="card-tabs">
+                                    <div class="card-content ">
+                                        <div class="entry">
+                                            <div class="row">
+                                                <div class="col s4"><p>Nama club</p></div>
+                                                <div class="col s1">: </div>
+                                                <div class="col s7">
+                                                    <div id="detail_name"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s4"><p>Nama singkat</p></div>
+                                                <div class="col s1">: </div>
+                                                <div class="col s7">
+                                                    <div id="detail_shortName"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s4"><p>Tla</p></div>
+                                                <div class="col s1">: </div>
+                                                <div class="col s7">
+                                                    <div id="detail_tla"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s4"><p>Dibentuk tahun</p></div>
+                                                <div class="col s1">: </div>
+                                                <div class="col s7">
+                                                    <div id="detail_founded"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s4"><p>Venue</p></div>
+                                                <div class="col s1">: </div>
+                                                <div class="col s7">
+                                                    <div id="detail_venue"></div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s4"> <p>Warna Club</p></div>
+                                                <div class="col s1">: </div>
+                                                <div class="col s7"> 
+                                                    <div id="detail_clubColors"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li> <!-- <li class="active"> -->
+                            <div class="collapsible-header">
+                                <i class="material-icons">email</i>KONTAK</div>
+                            <div class="collapsible-body" id="contact_club">
+                            <div class="card-tabs">
+                                <div class="card-content ">
+                                        <div class="row">
+                                            <div class="col s4"><p>Alamat</p></div>
+                                            <div class="col s1">: </div>
+                                            <div class="col s7">
+                                                <div id="detail_address"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s4"><p>Telepon</p></div>
+                                            <div class="col s1">: </div>
+                                            <div class="col s7">
+                                                <div id="detail_phone"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s4"><p>Situs web</p></div>
+                                            <div class="col s1">: </div>
+                                            <div class="col s7" style="word-wrap: break-word;">
+                                                <div id="detail_website"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col s4"><p>Surel</p></div>
+                                            <div class="col s1">: </div>
+                                            <div class="col s7" style="word-wrap: break-word;">
+                                                <div id="detail_email"></div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li> <!-- <li class="active"> -->
+                            <div class="collapsible-header">
+                                <i class="material-icons">directions_run</i>CEK DAFTAR PEMAIN</div>
+                            <div class="collapsible-body" id="squad_list"></div>
+                        </li>
+
+                        <li> <!-- <li class="active"> -->
+                            <div class="center-align teal lighten-1">
+                                <a class="btn pink accent-3" id="btnFavorit">
+                                    <i id="icon_Fav" class="material-icons" style="display:inline-flex;vertical-align:top;">favorite</i>
+                                    <span id="text_Fav">SIMPAN KE FAVORIT</span>
+                                </a>
+                            </div>
+                            
+                        </li>
+
+                    </ul>
+              </div>
+          </div>
+      </div>
+
+      
+       <div>
+         <h6><quote>“Ability is what you're capable of doing. Motivation determines what you do. Attitude determines how well you do it.” ― Lou Holtz</quote></h6>
+      </div>
+
+
+    </div>
+
+
+
+    <script  type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
+
+    <script src="js/materialize.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/idb.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/sw-detail.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js" ></script>
+
+
+
+  </body>
+</html>
