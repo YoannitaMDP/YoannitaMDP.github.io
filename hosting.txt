@@ -1,0 +1,20 @@
+1) GITHUB 
+
+https://yoannitamdp.github.io/public
+
+
+2) FIREBASE
+
+Hosting URL: https://pushnotif-1b915.web.app
+ 
+ 
+========================================================================
+
+Project Console: https://console.firebase.google.com/project/pushnotif-1b915/overview
+
+Hosting URL: https://pushnotif-1b915.web.app
+
+
+    git remote add origin https://github.com/[username]/[username].github.io.git
+
+    git remote add origin https://github.com/YoannitaMDP/YoannitaMDP.github.io.git

@@ -33,7 +33,11 @@ if (workbox) {
     { url: '/pages/jadwal.html', revision: '1' },
     { url: 'https://fonts.googleapis.com/icon?family=Material+Icons', revision: '1' },
     { url: 'https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2', revision: '1' }
-  ]);
+  ]
+  , {
+  ignoreUrlParametersMatching: [/.*/]
+  });
+
   
   workbox.routing.registerRoute(
     new RegExp('https://api.football-data.org/v2/'),
